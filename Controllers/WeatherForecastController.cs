@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using System.Reflection;
 
 namespace TeamcityTest.Controllers
 {
@@ -17,6 +18,10 @@ namespace TeamcityTest.Controllers
         {
             _logger = logger;
         }
+        protected string GetApplicationVersion()
+        {
+            return System.Reflection.Assembly.GetExecutingAssembly().GetName().Version.ToString();
+        }
 
         [HttpGet(Name = "GetWeatherForecast")]
         public String Get()
@@ -28,7 +33,8 @@ namespace TeamcityTest.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();*/
-            return "asdfasdkf";
+            string appVersion = GetApplicationVersion();
+            return appVersion;
         }
     }
 }
