@@ -33,8 +33,8 @@ namespace TeamcityTest.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();*/
-            string appVersion = GetApplicationVersion();
-            return appVersion;
+            string appVersion = GetApplicationVersion(); // API-35JCHAO9ADOI1TJ9NKL3YPLBFTEOFMG4
+            return "Hello world version "+appVersion;
         }
     }
 }
